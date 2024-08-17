@@ -15,6 +15,7 @@ function TextBox({ label, dataIn, handleData, id }) {
         onChange={handleChange}
         value={dataIn}
         id={id}
+        min={0}
       />
     </>
   );
