@@ -7,7 +7,7 @@ function NumImp({ dataIn, label, handleData, id }) {
 
   return (
     <>
-      <label className="form-label" htmlFor={id}>
+      <label className="form-label" htmlFor={id} >
         {label}
       </label>
       <input
@@ -16,6 +16,8 @@ function NumImp({ dataIn, label, handleData, id }) {
         value={dataIn}
         id={id}
         onChange={handleChange}
+        max={4}
+        min={1}
       />
     </>
   );
