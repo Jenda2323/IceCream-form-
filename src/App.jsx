@@ -35,23 +35,23 @@ function App() {
         setProgress((prev) => {
           const newValue = prev + 1;
           if (newValue >= 100) {
-            clearInterval(interval); // Vyčistit interval, pokud dosáhne 100
+            clearInterval(interval); 
           }
           return newValue;
         });
-      }, 1000); // 1 sekunda na jednotku
+      }, 1000); 
     }
     setTimeRemaining((prev) => {
       const newTime = prev - 1;
       if (newTime <= 0) {
-        clearInterval(interval); // Vyčistit interval, pokud čas dosáhne 0
+        clearInterval(interval); 
       }
       return newTime;
     });
 
-    // Vyčištění intervalů, když se komponenta odpojí
+   
     return () => clearInterval(interval);
-  }, [progress]); // Efekt závisí na hodnotě progress
+  }, [progress]); 
 
   const handleData = (data, source) => {
     switch (source) {
@@ -107,25 +107,17 @@ function App() {
         setError("");
         setSum(value1 + value2);
       }
-
-      switch (source) {
-        case "btn-download": {
-          saveText(text);
-          break;
-        }
-        default:
-          break;
-      }
+    } else if (source === "btn-download") {
+      saveText(text);
     }
   };
 
-  // Podmínka pro zobrazení "kopeček" nebo "kopečky"
   const kopecText = kopec === 1 ? "kopeček" : "kopečky";
 
   return (
-    <div className="bg-info-subtle vw-100 vh-100">
+    <div className="bg-info-subtle vw-100 vh-100 ">
       <div className="container bg-warning-subtle">
-        <div className="row" id="row">
+        <div className="row">
           <div className="col-6">
             <p className="p">
               {taste} {more} ,{kopec} {kopecText} - {kind}
